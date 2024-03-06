@@ -62,11 +62,8 @@ async function receiveData(req, res) {
   const receivedData = req.body;
   console.log("Data has been received");
   dataReceived = true;
-  const extractedNumber = receivedData.year.match(/\d+/);
-  const year = extractedNumber ? extractedNumber[0] : null;
   let movieDataFromTitle;
   let movieDetails;
-  let fiveImages;
 
   movieDataFromTitle = await getMovieDataFromTitle(receivedData.title, year);
 
